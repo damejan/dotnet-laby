@@ -1,0 +1,44 @@
+@model noteApp.Entities.Note
+
+<div class="columns is-centered mt-4">
+    <div class="column is-8">
+        <div class="box">
+            <h1 class="is-size-4 has-text-weight-semibold pb-3">Update Note</h1>
+            <form method="post" action="/note/edit/@Model.Id">
+                <div class="field">
+                    <label class="label" asp-for="title"></label>
+                    <div class="control">
+                        <input
+                            asp-for="title"
+                            type="text"
+                            class="input"
+                            name="title"
+                            placeholder="note title">
+                    </div>
+                </div>
+                <span asp-validation-for="title" class="help is-danger"></span>
+                <div class="field">
+                    <label class="label" asp-for="description"></label>
+                    <div class="control">
+                        <textarea
+                        asp-for="description"
+                        class="textarea"
+                        name="description"
+                        placeholder="content"
+                        rows="12">
+                        </textarea>
+                    </div>
+                </div>
+                <span asp-validation-for="description" class="help is-danger"></span>
+                <div class="field is-grouped mt-5">
+                    <div class="control">
+                        <button type="submit" class="button is-link submit-btn">Update Note</button>
+                    </div>
+                    <div class="control">
+                        <a asp-controller="Note" asp-action="SpecyficNote" asp-route-id="@Model.Id" class="button is-link is-light">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

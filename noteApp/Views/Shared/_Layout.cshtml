@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - notepaddApp</title>
+    <link rel="stylesheet" href="~/css/bulma.min.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+</head>
+<body>
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-brand">
+            <a asp-controller="Home" asp-action="Index" class="navbar-item is-size-4" style="font-weight: bold">Notepadd App</a>
+            <span class="navbar-burger burger" data-target="navMenu">
+                <span></span>
+                <span></span>
+            </span>
+        </div>
+        <div id="navMenu" class="navbar-menu">
+            <div class="navbar-end">
+
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a asp-controller="Note" asp-action="Create" class="button is-info is-outlined">New Note</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    @RenderBody()
+</div>
+<script src="~/lib/purify.min.js" asp-append-version="true"></script>
+<script src="~/lib/marked.min.js" asp-append-version="true"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

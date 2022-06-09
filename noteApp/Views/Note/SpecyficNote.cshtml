@@ -1,0 +1,21 @@
+@model noteApp.Entities.Note
+
+<div class="columns is-centered mt-4">
+    <div class="column is-8">
+        <div class="box">
+            <h1 class="is-size-1 has-text-weight-bold" id="note-title">@Model.title</h1>
+            <div class="content" id="note-content">
+                @Model.description
+            </div>
+            <div class="media mt-4">
+                @* <div class="media-content"> *@
+                @*     <p class="has-text-centered">2 mnutes ago</p> *@
+                @* </div> *@
+                <div class="media-right">
+                    <a asp-controller="Note" asp-action="Edit" asp-route-id="@Model.Id" class="button is-info">Edit</a>
+                    <a asp-controller="Note" asp-action="Delete" asp-route-id="@Model.Id" class="button is-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

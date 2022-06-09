@@ -1,0 +1,25 @@
+﻿@model IEnumerable<noteApp.Entities.Note>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@* <div class="text-center"> *@
+@*     <h1 class="display-4">Welcome</h1> *@
+@*     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p> *@
+@* </div> *@
+
+<div class="columns is-centered ">
+    <div class="column is-5">
+        @foreach (var note in Model)
+        {
+            <div class="card mt-4">
+                <div class="card-content">
+                    <a asp-controller="Note" asp-action="SpecyficNote" asp-route-id="@note.Id">
+                        <p class="title is-size-4">@note.title</p>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
